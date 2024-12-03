@@ -24,7 +24,7 @@ const AboutUsEditor = ({ selectedId }) => {
     const fetchAboutUs = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`http://localhost:5005/api/v1/aboutus/${idToUse}`);
+        const response = await fetch(`https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/aboutus/${idToUse}`);
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -66,7 +66,7 @@ const AboutUsEditor = ({ selectedId }) => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5005/api/v1/aboutus/update/${idToUse}`, {
+      const response = await fetch(`https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/aboutus/update/${idToUse}`, {
         method: "PUT",
         body: form,
       });

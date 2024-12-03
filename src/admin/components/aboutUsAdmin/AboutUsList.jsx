@@ -8,7 +8,7 @@ const AboutUsList = () => {
   useEffect(() => {
     const fetchAboutUsList = async () => {
       try {
-        const response = await fetch("http://localhost:5005/api/v1/aboutus");
+        const response = await fetch("https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/aboutus");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }

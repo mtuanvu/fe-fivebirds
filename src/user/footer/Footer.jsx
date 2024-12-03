@@ -16,12 +16,12 @@ export default function Footer() {
   useEffect(() => {
     const fetchFooter = async () => {
       try {
-        const footerResponse = await axios.get("http://localhost:5005/api/v1/footer");
+        const footerResponse = await axios.get("https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/footer");
         if (footerResponse.data) {
           setFooterContent(footerResponse.data); // Set nội dung Footer
         }
 
-        const imageResponse = await axios.get("http://localhost:5005/api/v1/footer-images");
+        const imageResponse = await axios.get("https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/footer-images");
         if (imageResponse.data && imageResponse.data.length > 0) {
           setFooterImage(imageResponse.data[0].imageUrl); // Lưu URL ảnh từ API
         }

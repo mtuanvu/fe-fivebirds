@@ -14,7 +14,7 @@ const AboutUsAdmin = () => {
     if (selectedItem) {
       try {
         const response = await axios.put(
-          `http://localhost:5005/api/v1/aboutus/update/${selectedItem.id}`,
+          `https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/aboutus/update/${selectedItem.id}`,
           { ...selectedItem, description }
         );
         alert("Successfully updated!");

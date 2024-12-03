@@ -14,14 +14,14 @@ export default function EditorColumn() {
   // Hàm tải dữ liệu Footer từ backend
   const fetchFooterData = async () => {
     try {
-      const response = await axios.get("http://localhost:5005/api/v1/footer");
+      const response = await axios.get("https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/footer");
       const { column1, column2, column3 } = response.data || {};
       setContent1(column1 || "");
       setContent2(column2 || "");
       setContent3(column3 || "");
 
       // Gọi API để lấy ảnh Footer
-      const imageResponse = await axios.get("http://localhost:5005/api/v1/footer-images");
+      const imageResponse = await axios.get("https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/footer-images");
       if (imageResponse.data && imageResponse.data.length > 0) {
         setUploadedImage(imageResponse.data[0].imageUrl); // Lấy ảnh đầu tiên
       }
@@ -38,7 +38,7 @@ export default function EditorColumn() {
         column2: content2,
         column3: content3,
       };
-      const response = await axios.post("http://localhost:5005/api/v1/footer/save", payload);
+      const response = await axios.post("https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/footer/save", payload);
       console.log("Footer saved successfully:", response.data);
       alert("Footer updated successfully!");
     } catch (error) {
@@ -59,7 +59,7 @@ export default function EditorColumn() {
   
     try {
       const response = await axios.post(
-        "http://localhost:5005/api/v1/footer-images/upload",
+        "https://fivebirds-f9g8a3bzfxdfhkcc.japaneast-01.azurewebsites.net/api/v1/footer-images/upload",
         formData,
         {
           headers: {
